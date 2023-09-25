@@ -1,0 +1,149 @@
+<!--index.wxml-->
+<van-notice-bar
+  left-icon="volume-o"
+  text="{{notice}}"
+/>
+
+<view class="swiper">
+      <swiper
+        indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" circular="{{circular}}" vertical="{{vertical}}"
+        interval="{{interval}}" duration="{{duration}}" previous-margin="{{previousMargin}}px" next-margin="{{nextMargin}}px">
+        <block wx:for="{{background}}" wx:key="*this">
+          <swiper-item>
+            <!-- <view class="swiper-item {{item}}"></view> -->
+            <image src="{{item}}"></image>
+          </swiper-item>
+        </block>
+    </swiper>
+</view>
+
+<view id="headText">
+  <text decode="{{true}}">
+    &nbsp;&nbsp;&nbsp;&nbsp;致力创造丰富多彩的老年生活
+    &nbsp;&nbsp;&nbsp;&nbsp;
+ </text>
+</view>
+
+<view>
+  <view style="display:flex;" class="naviView">
+    <van-button type="primary" size="large" class="my_button" block bind:click="naviToWeather" round="true">
+      <image class="naviImg" bindtap="" src="/static/images/tianqi.png"></image>获取当地天气</van-button>
+    <!-- <view class="naviButton" id="weahter" bindtouchstart="naviToWeather">获取当地天气</view> -->
+  </view>
+  
+  <view style="display:flex;" class="naviView">
+    <van-button type="primary" size="large" class="my_button" block bind:click="naviToRegeo" round="true">
+      <image class="naviImg" bindtap="" src="/static/images/dingwei.png"></image>获取当前位置</van-button>
+      <!-- <view class="naviButton" id="Regeo" bindtouchstart="naviToRegeo">获取当前位置</view> -->
+  </view>
+  
+  <view style="display:flex;" class="naviView">
+    <van-button type="primary" size="large" class="my_button" block bind:click="naviToPoi" round="true">
+      <image class="naviImg" bindtap="" src="/static/images/didian.png"></image>获取周边地点</van-button>
+      <!-- <view class="naviButton" id="poi" bindtouchstart="naviToPoi">周边兴趣点查询</view> -->
+  </view>  
+  
+  <!-- <view class="naviButton" id="staticmap" bindtouchstart="naviToStatic">静态图</view> -->
+  <!-- <view class="naviButton" id="navi" bindtouchstart="naviToNavi">出行路线规划</view> -->
+</view>
+
+
+
+<!-- 
+<van-row>
+  <van-col span="8">span: 8</van-col>
+</van-row> -->
+
+
+<!-- <view class="container">
+  <view class="page-body">
+
+    <view class="page-section" style="margin-top: 40rpx;margin-bottom: 0;">
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_switch">
+          <view class="weui-cell__bd">指示点</view>
+          <view class="weui-cell__ft">
+            <switch checked="{{indicatorDots}}" bindchange="changeProperty" data-property-name="indicatorDots" />
+          </view>
+        </view>
+        <view class="weui-cell weui-cell_switch">
+          <view class="weui-cell__bd">自动播放</view>
+          <view class="weui-cell__ft">
+            <switch checked="{{autoplay}}" bindchange="changeProperty" data-property-name="autoplay" />
+          </view>
+        </view>
+        <view class="weui-cell weui-cell_switch">
+          <view class="weui-cell__bd">衔接滑动</view>
+          <view class="weui-cell__ft">
+            <switch checked="{{circular}}" bindchange="changeProperty" data-property-name="circular" />
+          </view>
+        </view>
+        <view class="weui-cell weui-cell_switch">
+          <view class="weui-cell__bd">竖向</view>
+          <view class="weui-cell__ft">
+            <switch checked="{{vertical}}" bindchange="changeProperty" data-property-name="vertical" />
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class="page-section page-section-spacing">
+      <view class="page-section-title">
+        <text>幻灯片切换时长(ms)</text>
+        <text class="info">{{duration}}</text>
+      </view>
+      <slider value="{{duration}}" min="500" max="2000" bindchange="changeProperty" data-property-name="duration" />
+      <view class="page-section-title">
+        <text>自动播放间隔时长(ms)</text>
+        <text class="info">{{interval}}</text>
+      </view>
+      <slider value="{{interval}}" min="2000" max="10000" bindchange="changeProperty" data-property-name="interval" />
+      <view class="page-section-title">
+        <text>前边距(px)</text>
+        <text class="info">{{previousMargin}}</text>
+      </view>
+      <slider value="{{previousMargin}}" min="0" max="50" bindchange="changeProperty" data-property-name="previousMargin" />
+      <view class="page-section-title">
+        <text>后边距(px)</text>
+        <text class="info">{{nextMargin}}</text>
+      </view>
+      <slider value="{{nextMargin}}" min="0" max="50" bindchange="changeProperty" data-property-name="nextMargin" />
+    </view>
+  </view>
+</view> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <view class="container">
+  <view class="userinfo">
+    <block wx:if="{{canIUseOpenData}}">
+      <view class="userinfo-avatar" bindtap="bindViewTap">
+        <open-data type="userAvatarUrl"></open-data>
+      </view>
+      <open-data type="userNickName"></open-data>
+    </block>
+    <block wx:elif="{{!hasUserInfo}}">
+      <button wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile"> 获取头像昵称 </button>
+      <button wx:elif="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+      <view wx:else> 请使用1.4.4及以上版本基础库 </view>
+    </block>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+  </view>
+</view> -->

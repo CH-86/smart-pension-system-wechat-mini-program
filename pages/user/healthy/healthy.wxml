@@ -1,0 +1,30 @@
+<!--pages/user/healthy/healthy.wxml-->
+<wxs src="../healthy/typeCheck.wxs"  module="tools" />
+
+
+<van-collapse  value="{{ activeName }}" bind:change="onChange">
+  <van-collapse-item title="{{case.date[0]+case.date[1]+case.date[2]+case.date[3]+'年'+case.date[5]+case.date[6]+'月'+case.date[8]+case.date[9]+'日'}}" name="{{cases.id}}" wx:for="{{cases}}" wx:for-item="case" >
+    <van-cell-group title="{{'订单id:'+case.id}}"> 
+        <view wx:for="{{case}}" wx:for-index="key"  wx:for-item="value" >
+            <van-cell  wx:if="{{!(key == 'date' || key == 'id' || key == 'sex')}}"
+            title="{{casesInfo.nameInfo[key] ? casesInfo.nameInfo[key]: key }} " value="{{ casesInfo.valueInfo[key] ? ' ' + (tools.typeCheck(casesInfo.valueInfo[key]) == 'string' ? value + ' ' + casesInfo.valueInfo[key] : casesInfo.valueInfo[key][value]) : value }}" />
+        </view>
+    </van-cell-group>    
+  </van-collapse-item>
+</van-collapse>
+
+<!-- <view wx:for="{{cases}}" wx:for-item="case" >
+    <van-cell-group title="{{case.date[0]+case.date[1]+case.date[2]+case.date[3]+'年'+case.date[5]+case.date[6]+'月'+case.date[8]+case.date[9]+'日'}}" >
+        <view wx:for="{{case}}" wx:for-index="key"  wx:for-item="value" >
+            <van-cell  wx:if="{{!(key == 'date' || key == 'id' || key == 'sex')}}"
+            title="{{casesInfo.nameInfo[key] ? casesInfo.nameInfo[key]: key }} " value="{{ casesInfo.valueInfo[key] ? ' ' + (tools.typeCheck(casesInfo.valueInfo[key]) == 'string' ? value + ' ' + casesInfo.valueInfo[key] : casesInfo.valueInfo[key][value]) : value }}" />
+        </view>
+    </van-cell-group>
+</view> -->
+
+<scroll-view scroll-x scroll-y class="scroll-view" >
+    <button class="wxBtn" bindtap="return">
+        <image class="wxfxBtn_image" src="../../../static/images/return.png"></image>
+    </button >
+</scroll-view>
+

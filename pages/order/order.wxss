@@ -1,0 +1,7 @@
+/* pages/user/order/order.wxss */
+
+.click{
+    width: 100%;
+    align-content: center;
+}
+

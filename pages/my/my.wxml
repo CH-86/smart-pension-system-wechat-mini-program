@@ -1,0 +1,88 @@
+<!--pages/my/my.wxml-->
+<view class="container">
+  <view class="profile-info">
+    <image bindtap="onUserInfoClick" class="avatar" src="/static/images/avator.jpg"></image>
+    <view class="info">
+      <text class='name' bindtap='onUserInfoClick'>{{ userPhone }}</text>
+    </view>
+    <image bindtap="onUserInfoClick" class='btn' src='/static/images/address_right.png'></image>
+  </view>
+
+  <view class="user-menu">
+    <view class="item item-bottom">
+      <navigator url="/pages/user/info/info" class="a">
+        <text class="icon feedback"></text>
+        <text class="txt">个人信息</text>
+      </navigator>
+    </view>
+    <view class="item">
+      <navigator url="/pages/user/order/order" class="a">
+        <text class="icon order"></text>
+        <text class="txt">我的订单</text>
+      </navigator>
+    </view>
+    <view class="item">
+      <navigator url="/pages/user/healthy/healthy" class="a">
+        <text class="icon healthy"></text>
+        <text class="txt">健康档案</text>
+      </navigator>
+    </view>
+    <view class="item">
+      <navigator url="/pages/map/regeo/regeo" class="a">
+        <text class="icon address"></text>
+        <text class="txt">地图</text>
+      </navigator>
+    </view>
+    <!-- <view class="item">
+      <navigator url="/pages/ucenter/footprint/footprint" class="a">
+        <text class="icon security"></text>
+        <text class="txt">我的足迹</text>
+      </navigator>
+    </view>
+    <view class="item no-border">
+      <navigator url="url" class="a">
+        <text class="icon kefu"></text>
+        <text class="txt">联系客服</text>
+      </navigator>
+    </view>
+    <view class="item item-bottom">
+      <navigator url="url" class="a">
+        <text class="icon help"></text>
+        <text class="txt">帮助中心</text>
+      </navigator>
+    </view>
+    <view class="item item-bottom">
+      <navigator url="/pages/user/feedback/feedback" class="a">
+        <text class="icon feedback"></text>
+        <text class="txt">意见反馈</text>
+      </navigator>
+    </view> -->
+
+    <view>
+      <button bindtap="sos"><image src="/static/images/jinggao.png" class="my_img" style="  width: 36rpx ; height: 36rpx;"></image> 
+      紧急呼救
+      </button>
+    </view>
+  </view>
+  <!-- <view class="logout" bindtap="exitLogin">退出登录</view> -->
+</view>
+
+
+
+<!-- <view class='dialog-login' wx:if="{{showLoginDialog}}" bindtap='onCloseLoginDialog'>
+  <view class='dialog-body' catchtap='onDialogBody'>
+    <view class='title'>请选择登录方式</view>
+    <view class='content'>
+      <button type="primary" open-type="getUserInfo" bindgetuserinfo="onWechatLogin">微信登录</button>
+      <button open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onWechatLogin">手机号登录</button>
+    </view>
+  </view>
+</view> -->
+
+<!-- <text>输入文字</text>
+<input class="weui-input" auto-focus placeholder="文本输入框" bindinput="InputStr"/>
+<button bindtap="btnFun">确定输入</button>
+<view scroll-y="true" scroll-top="{{scrollTop}}">
+  <text>{{text}}</text>
+</view> -->
+

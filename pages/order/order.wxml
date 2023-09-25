@@ -1,0 +1,52 @@
+<!--pages/user/order/order.wxml-->
+<!-- <text>// 护理 咨询 体检</text> -->
+
+<!-- <view wx:for="{{order}}" wx:for-item="item">
+    <van-card
+    wx:if="{{item.status == 2}}"
+    tag="{{item.type}}"
+    desc="状态{{status[item.status]}}"
+    title="单号{{item.id}}"
+    thumb="{{ imageURL }}"
+    >
+        <view slot="footer">
+            <!-- <view wx:for="{{item}}" wx:for-index="key"  wx:for-item="value" >
+                <text>{{key}}</text>
+                <text>{{value}}</text>
+            </view> -->
+            <!-- <van-button size="mini">{{key}}取消</van-button>
+        </view>
+    </van-card>
+</view> -->
+
+
+<van-tabs active="体检" title-active-color="#56BB37"  color="#56BB37" bind:change="onChange">
+    <van-tab title="体检" name="体检">
+        <image src="../../static/images/tijian.jpeg" class="my_img"></image>
+    </van-tab>
+    <van-tab title="生活护理" name="护理">
+        <image src="../../static/images/huli.jpeg" class="my_img"></image>
+    </van-tab>
+    <van-tab title="咨询" name="咨询">
+        <image src="../../static/images/zixun.jpeg" class="my_img"></image>
+    </van-tab>
+    <van-cell-group wx:if="{{type  === '咨询' || type  === '护理'}}">
+        <van-field
+            size = "large"
+            model:value="{{ inText }}"
+            label="内容"
+            type="textarea"
+            placeholder="请输入内容"
+            autosize
+            border="{{ false }}"
+            maxlength = "200"
+            show-word-limit	
+        />
+    </van-cell-group>
+
+    <van-cell title="选择日期" value="{{ date }}" bind:click="onDisplay" is-link  arrow-direction="down" wx:if="{{type  === '体检' || type  === '护理'}}" />
+    <van-calendar show="{{ show }}" bind:close="onClose" bind:confirm="onConfirm" />
+    <van-button type="primary" size="large" class="my_button" block bind:click="yuyue">
+    提交</van-button>
+    <text>{{nullDate}}</text>
+</van-tabs>

@@ -1,0 +1,4 @@
+var typeCheck = function(value){
+    return typeof value
+}
+module.exports.typeCheck = typeCheck

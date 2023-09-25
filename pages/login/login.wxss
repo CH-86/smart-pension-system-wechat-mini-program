@@ -1,0 +1,17 @@
+/* pages/login.wxss */
+
+.loginForm{
+    border-radius: 100%;
+    position: fixed;
+    bottom: 25%;
+    left: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9;
+}
+
+.loginButton{
+    display: flex;
+    align-items:flex-end;
+}

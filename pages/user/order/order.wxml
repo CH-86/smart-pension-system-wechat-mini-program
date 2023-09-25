@@ -1,0 +1,71 @@
+<!--pages/user/order/order.wxml-->
+<!-- <text>// 护理 咨询 体检</text> -->
+
+<van-steps steps="{{ steps }}" active="{{ active }}" />
+
+<van-tabs active="待受理" title-active-color="#56BB37"  color="#56BB37" bind:change="onChange">
+    <van-tab title="待受理" name="待受理">
+        <view wx:for="{{order}}" wx:for-item="item" wx:key="id">
+            <van-card
+            wx:if="{{item.status == 0 }}"
+            tag="{{item.type}}"
+            desc="状态: {{status[item.status +1 ]}}"
+            title="单号{{item.id}}"
+            thumb="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic.51yuansu.com%2Fpic3%2Fcover%2F01%2F09%2F37%2F5903344784d09_610.jpg&refer=http%3A%2F%2Fpic.51yuansu.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1654188990&t=fe7c49881d2ffc304529f5c399d75b15"
+            >
+                <view slot="footer">
+                    <!-- <view wx:for="{{item}}" wx:for-index="key"  wx:for-item="value" >
+                        <text>{{key}}</text>
+                        <text>{{value}}</text>
+                    </view> -->
+                    <custom></custom>
+                    <van-button size="mini" data-id="{{item.id}}"  bind:click="cancel">{{key}}取消</van-button>
+                </view>
+            </van-card>
+        </view>
+    </van-tab>
+    <van-tab title="受理中" name="受理中">
+        <view wx:for="{{order}}" wx:for-item="item" wx:key="id">
+            <van-card
+            wx:if="{{item.status == 1}}"
+            tag="{{item.type}}"
+            desc="状态: {{status[item.status +1 ]}}"
+            title="单号{{item.id}}"
+            thumb="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic.51yuansu.com%2Fpic3%2Fcover%2F01%2F09%2F37%2F5903344784d09_610.jpg&refer=http%3A%2F%2Fpic.51yuansu.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1654188990&t=fe7c49881d2ffc304529f5c399d75b15"
+            >
+                <view slot="footer">
+                    <custom></custom>
+                </view>
+            </van-card>
+        </view>       
+    </van-tab>
+    <van-tab title="已完成" name="已完成">
+        <view wx:for="{{order}}" wx:for-item="item" wx:key="id">
+            <van-card
+            wx:if="{{item.status == 2}}"
+            tag="{{item.type}}"
+            desc="状态: {{status[item.status +1 ]}}"
+            title="单号{{item.id}}"
+            thumb="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic.51yuansu.com%2Fpic3%2Fcover%2F01%2F09%2F37%2F5903344784d09_610.jpg&refer=http%3A%2F%2Fpic.51yuansu.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1654188990&t=fe7c49881d2ffc304529f5c399d75b15"
+            >
+                <view slot="footer">
+                    <custom></custom>
+                </view>
+            </van-card>
+        </view>    
+    </van-tab>
+    <!-- <van-tab title="已取消" name="已取消">
+        <view wx:for="{{order}}" wx:for-item="item">
+            <van-card
+            wx:if="{{item.status == -1}}"
+            tag="{{item.type}}"
+            desc="状态: {{status[item.status +1 ]}}"
+            title="单号{{item.id}}"
+            thumb="{{ imageURL }}"
+            >
+                <view slot="footer">
+                </view>
+            </van-card>
+        </view>
+    </van-tab> -->
+</van-tabs>

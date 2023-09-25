@@ -1,0 +1,86 @@
+{
+    "pages": [
+        "pages/login/login",
+        "pages/index/index",
+        "pages/my/my",
+        "pages/logs/logs",
+        "pages/user/info/info",
+        "pages/order/order",
+        "pages/user/feedback/feedback",
+        "pages/user/order/order",
+        "pages/user/healthy/healthy",
+        "pages/map/regeo/regeo",
+        "pages/map/weather/weather",
+        "pages/map/poi/poi",
+        "pages/map/navigation_car/navigation",
+        "pages/map/navigation_walk/navigation",
+        "pages/map/navigation_bus/navigation",
+        "pages/map/navigation_ride/navigation",
+        "pages/register/register"
+    ],
+    "permission": {
+        "scope.userLocation": {
+            "desc": "你的位置信息将用于小程序位置接口的效果展示"
+        }
+    },
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "智慧养老",
+        "navigationBarTextStyle": "black"
+    },
+    "style": "v2",
+    "sitemapLocation": "sitemap.json",
+    "usingComponents": {
+        "van-button": "@vant/weapp/button/index",
+        "van-field": "@vant/weapp/field/index",
+        "van-row": "@vant/weapp/row/index",
+        "van-col": "@vant/weapp/col/index",
+        "van-cell": "@vant/weapp/cell/index",
+        "van-card": "@vant/weapp/card/index",
+        "van-tabbar": "@vant/weapp/tabbar/index",
+        "van-tabbar-item": "@vant/weapp/tabbar-item/index",
+        "van-nav-bar": "@vant/weapp/nav-bar/index",
+        "van-icon": "@vant/weapp/icon/index",
+        "van-notice-bar": "@vant/weapp/notice-bar/index",
+        "van-cell-group": "@vant/weapp/cell-group/index",
+        "van-tab": "@vant/weapp/tab/index",
+        "van-tabs": "@vant/weapp/tabs/index",
+        "van-calendar": "@vant/weapp/calendar/index",
+        "van-tag": "@vant/weapp/tag/index",
+        "van-steps": "@vant/weapp/steps/index",
+        "van-sidebar": "@vant/weapp/sidebar/index",
+        "van-sidebar-item": "@vant/weapp/sidebar-item/index",
+        "van-collapse": "@vant/weapp/collapse/index",
+        "van-collapse-item": "@vant/weapp/collapse-item/index",
+        "van-radio": "@vant/weapp/radio/index",
+        "van-radio-group": "@vant/weapp/radio-group/index",
+        "van-picker": "@vant/weapp/picker/index"
+    },
+    "tabBar": {
+        "backgroundColor": "#fafafa",
+        "borderStyle": "white",
+        "selectedColor": "#b4282d",
+        "color": "#666",
+        "list": [
+            {
+                "pagePath": "pages/index/index",
+                "iconPath": "static/images/ic_menu_choice_nor.png",
+                "selectedIconPath": "static/images/ic_menu_choice_pressed.png",
+                "text": "首页"
+            },
+            {
+                "pagePath": "pages/order/order",
+                "iconPath": "static/images/ic_menu_order_nor.png",
+                "selectedIconPath": "static/images/ic_menu_order_pressed.png",
+                "text": "需求"
+            },
+            {
+                "pagePath": "pages/my/my",
+                "iconPath": "static/images/ic_menu_me_nor.png",
+                "selectedIconPath": "static/images/ic_menu_me_pressed.png",
+                "text": "我的"
+            }
+        ]
+    }
+}
